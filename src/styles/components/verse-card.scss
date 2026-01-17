@@ -1,0 +1,115 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.verse-card {
+  @include card;
+  scroll-margin-top: 24px;
+  
+  &__header {
+    @include flex-between;
+    margin-bottom: $spacing-lg;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+  
+  &__badge {
+    background: $color-primary;
+    color: white;
+    padding: 4px 12px;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+  }
+  
+  &__meta {
+    font-size: $font-size-xs;
+    color: $color-muted;
+  }
+  
+  &__sanskrit {
+    font-size: $font-size-xl;
+    line-height: $line-height-relaxed;
+    color: $color-foreground;
+    margin-bottom: $spacing-lg;
+    font-weight: $font-weight-medium;
+    text-align: center;
+    padding: $spacing-md 0;
+    
+    @include mobile {
+      font-size: $font-size-lg;
+    }
+  }
+  
+  &__transliteration {
+    font-size: $font-size-md;
+    line-height: $line-height-relaxed;
+    color: $color-muted;
+    font-style: italic;
+    margin-bottom: $spacing-lg;
+    padding: $spacing-md;
+    background: $color-secondary;
+    border-radius: $radius-md;
+    border-left: 3px solid $color-primary;
+  }
+  
+  &__translation {
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    color: $color-foreground;
+    margin-bottom: $spacing-lg;
+    font-weight: $font-weight-medium;
+  }
+  
+  &__commentary {
+    &-title {
+      font-size: $font-size-md;
+      font-weight: $font-weight-semibold;
+      color: $color-foreground;
+      margin-bottom: $spacing-sm;
+    }
+    
+    &-text {
+      font-size: $font-size-md;
+      line-height: $line-height-relaxed;
+      color: $color-muted;
+    }
+  }
+  
+  &__actions {
+    margin-top: $spacing-lg;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $color-border;
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+  }
+  
+  &__button {
+    @include button-reset;
+    padding: 8px 16px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    border-radius: $radius-md;
+    @include smooth-transition(all);
+    
+    &--primary {
+      background: $color-primary;
+      color: white;
+      
+      &:hover {
+        background: $color-primary-dark;
+      }
+    }
+    
+    &--secondary {
+      background: $color-secondary;
+      color: $color-foreground;
+      
+      &:hover {
+        background: darken($color-secondary, 5%);
+      }
+    }
+    
+    @include focus-visible;
+  }
+}

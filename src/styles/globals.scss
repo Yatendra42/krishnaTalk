@@ -1,0 +1,150 @@
+@import './base/reset';
+@import './base/variables';
+@import './base/mixins';
+
+/* Global Styles */
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $color-foreground;
+  background-color: $color-background;
+  line-height: $line-height-normal;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+}
+
+h1 {
+  font-size: $font-size-2xl;
+  
+  @include desktop-up {
+    font-size: 32px;
+  }
+}
+
+h2 {
+  font-size: $font-size-xl;
+  
+  @include desktop-up {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  font-size: $font-size-lg;
+}
+
+/* Utility Classes */
+
+.container {
+  @include container;
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $color-primary;
+  color: white;
+  padding: $spacing-sm $spacing-md;
+  text-decoration: none;
+  border-radius: $radius-md;
+  z-index: $z-tooltip;
+  
+  &:focus {
+    top: $spacing-sm;
+  }
+}
+
+/* Layout Utilities */
+.page-wrapper {
+  min-height: 100vh;
+  background: $color-background;
+}
+
+.main-content {
+  @include container;
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+}
+
+.content-layout {
+  display: flex;
+  gap: $spacing-2xl;
+  
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.content-primary {
+  flex: 1;
+}
+
+.verse-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3xl;
+}
+
+.load-more {
+  text-align: center;
+  padding: $spacing-2xl 0;
+  
+  &__text {
+    color: $color-muted;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-md;
+  }
+  
+  &__button {
+    @include button-reset;
+    padding: 8px 24px;
+    background: $color-primary;
+    color: white;
+    border-radius: $radius-md;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    @include smooth-transition(background);
+    
+    &:hover {
+      background: $color-primary-dark;
+    }
+  }
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Component Styles */
+@import './components/header';
+@import './components/hero';
+@import './components/footer';
+@import './components/audio-player';
+@import './components/verse-card';
+@import './components/sidebar';

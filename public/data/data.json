@@ -1,0 +1,104 @@
+{
+    "chapters": [
+        {
+            "number": 1,
+            "title": "Arjuna Vishad Yog",
+            "subtitle": "The Yoga of Arjuna's Dejection",
+            "imageUrl": "https://images.unsplash.com/photo-1764863455595-bc3d67c3b3ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmNpZW50JTIwd2FycmlvciUyMGNoYXJpb3R8ZW58MXx8fHwxNzY4Mjk2OTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+            "verseCount": 47,
+            "verses": [
+                {
+                    "id": "2.47",
+                    "number": "2.47",
+                    "sanskrit": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन | मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ।।",
+                    "transliteration": "karmany-evadhikaras te ma phaleshu kadachanama karma-phala-hetur bhur ma te sango stvakarmani//",
+                    "translation": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself to be the cause of the results of your activities, nor be attached to inaction",
+                    "commentary": "\"God is the Master of the entire creation; all moving and non-moving beings are his servants.\" Material consciousness is characterized by the following manner of thoughts, \"I am the proprietor of all that I possess. It is all meant for my enjoyment. I have the right to enhance my possessions and maximize my enjoyment.\" The reverse of this is Spiritual consciousness, which is characterized by thoughts such as, \"God is the owner and enjoyer of this entire world. I am merely his selfless servant. I must use all that I have in the service of God.\" Accordingly, Shree Krishna instructs Arjun not to think of himself as the enjoyer of the fruits of his actions."
+                },
+                {
+                    "id": "1.1",
+                    "number": "1.1",
+                    "sanskrit": "धृतराष्ट्र उवाच। धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः। मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय।।",
+                    "transliteration": "dhrtarastra uvaca / dharma-ksetre kuru-ksetre samaveta yuyutsavah / mamakah pandavas caiva kim akurvata sanjaya //",
+                    "translation": "Dhritarashtra said: O Sanjaya, after gathering on the holy field of Kurukshetra, and desiring to fight, what did my sons and the sons of Pandu do?",
+                    "commentary": "Dhritarashtra's inquiry is significant. After gathering on the holy field of Kurukshetra, and desiring to fight, what did his sons do? Though he inquired \"what they did,\" he was uncertain whether the battle was actually fought or not. He well knew that the sons of Pandu were exceedingly powerful and that they would annihilate his forces. But who knows whether, by virtue of religiousness being on the battlefield of Kurukshetra itself (as it was the place where dharma was established), some righteous action or attitude might have prevailed and prevented the actual clash between his sons and the Pandavas. Such was the thinking of Dhritarashtra, and to learn the actual outcome he inquired of his minister Sanjaya. This verse is significant because of the word \"dharma-ksetre\" [the place where dharma is established]."
+                },
+                {
+                    "id": "1.2",
+                    "number": "1.2",
+                    "sanskrit": "सञ्जय उवाच। दृष्ट्वा तु पाण्डवानीकं व्यूढं दुर्योधनस्तदा। आचार्यमुपसङ्गम्य राजा वचनमब्रवीत्।।",
+                    "transliteration": "sanjaya uvaca / drstva tu pandavanikam vyudham duryodhanas tada / acaryam upasangamya raja vacanam abravit //",
+                    "translation": "Sanjaya said: O King, after observing the Pandava army standing in military array, King Duryodhana approached his teacher Dronacharya and spoke the following words.",
+                    "commentary": "Sanjaya narrates the scene to the blind King Dhritarashtra. Duryodhana, upon seeing the formidable Pandava army arrayed for battle, approaches his teacher Dronacharya. This indicates his anxiety and need for reassurance. The verse shows the beginning of the actual narrative of events at Kurukshetra."
+                },
+                {
+                    "id": "1.3",
+                    "number": "1.3",
+                    "sanskrit": "पश्यैतां पाण्डुपुत्राणामाचार्य महतीं चमूम्। व्यूढां द्रुपदपुत्रेण तव शिष्येण धीमता।।",
+                    "transliteration": "pasyaitam pandu-putranam acarya mahatim camum / vyudham drupada-putrena tava sisyena dhimata //",
+                    "translation": "O Teacher, behold the great army of the sons of Pandu, arrayed by your intelligent disciple, the son of Drupada.",
+                    "commentary": "Duryodhana points out to Dronacharya that the Pandava army has been expertly arranged by Dhrishtadyumna, who is Dronacharya's own disciple. This is a subtle taunt, reminding the teacher that his own student is now fighting against him. Duryodhana attempts to motivate Dronacharya by arousing his sense of rivalry and proving his superiority over his student."
+                }
+            ]
+        },
+        {
+            "number": 2,
+            "title": "Sankhya Yoga",
+            "subtitle": "The Yoga of Knowledge",
+            "imageUrl": "https://images.unsplash.com/photo-1766524791322-8753e582e652?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGlyaXR1YWwlMjBtZWRpdGF0aW9uJTIwY2FsbXxlbnwxfHx8fDE3NjgyMTgwODF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+            "verseCount": 72,
+            "verses": [
+                {
+                    "id": "2.1",
+                    "number": "2.1",
+                    "sanskrit": "सञ्जय उवाच। तं तथा कृपयाविष्टमश्रुपूर्णाकुलेक्षणम्। विषीदन्तमिदं वाक्यमुवाच मधुसूदनः।।",
+                    "transliteration": "sanjaya uvaca / tam tatha krpayavistam asru-purnakuleksanam / visidantam idam vakyam uvaca madhusudanah //",
+                    "translation": "Sanjaya said: Seeing Arjuna full of compassion, his mind depressed, his eyes full of tears, Madhusudana, Krishna, spoke the following words.",
+                    "commentary": "This verse describes Arjuna's emotional state at the beginning of Chapter 2. Overcome with compassion and grief at the prospect of fighting his own relatives, Arjuna is in tears and deeply dejected. Lord Krishna, addressed here as Madhusudana (slayer of the demon Madhu), prepares to deliver his divine counsel."
+                },
+                {
+                    "id": "2.2",
+                    "number": "2.2",
+                    "sanskrit": "श्रीभगवानुवाच। कुतस्त्वा कश्मलमिदं विषमे समुपस्थितम्। अनार्यजुष्टमस्वर्ग्यमकीर्तिकरमर्जुन।।",
+                    "transliteration": "sri-bhagavan uvaca / kutas tva kasmalam idam visame samupasthitam / anarya-justam asvargyam akirti-karam arjuna //",
+                    "translation": "The Supreme Lord said: My dear Arjuna, how have these impurities come upon you? They are not at all befitting a man who knows the value of life. They lead not to higher planets but to infamy.",
+                    "commentary": "Krishna begins by questioning Arjuna's sudden change of heart. He points out that this dejection is unbecoming of an Aryan (noble person), that it will not lead to heavenly planets, and that it will bring dishonor. This is Krishna's initial attempt to shake Arjuna out of his emotional paralysis and remind him of his duty as a warrior."
+                }
+            ]
+        },
+        {
+            "number": 3,
+            "title": "Karma Yoga",
+            "subtitle": "The Yoga of Action",
+            "imageUrl": "https://images.unsplash.com/photo-1761635095574-3c63c3584e19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmNpZW50JTIwd2lzZG9tJTIwYm9va3xlbnwxfHx8fDE3NjgyOTY5MTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+            "verseCount": 43,
+            "verses": [
+                {
+                    "id": "3.1",
+                    "number": "3.1",
+                    "sanskrit": "अर्जुन उवाच। ज्यायसी चेत्कर्मणस्ते मता बुद्धिर्जनार्दन। तत्किं कर्मणि घोरे मां नियोजयसि केशव।।",
+                    "transliteration": "arjuna uvaca / jyayasi cet karmanas te mata buddhir janardana / tat kim karmani ghore mam niyojayasi kesava //",
+                    "translation": "Arjuna said: O Janardana, O Keshava, why do you want to engage me in this ghastly warfare, if you think that intelligence is better than fruitive work?",
+                    "commentary": "Arjuna expresses his confusion about Krishna's teachings. If knowledge and wisdom are superior to action, then why is Krishna asking him to engage in the terrible act of war? This question sets up Krishna's explanation of Karma Yoga - the yoga of selfless action."
+                }
+            ]
+        },
+        {
+            "number": 4,
+            "title": "Jnana Karma Sanyasa Yoga",
+            "subtitle": "The Yoga of Knowledge and Renunciation of Action",
+            "imageUrl": "https://images.unsplash.com/photo-1764863455595-bc3d67c3b3ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmNpZW50JTIwd2FycmlvciUyMGNoYXJpb3R8ZW58MXx8fHwxNzY4Mjk2OTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+            "verseCount": 42,
+            "verses": [
+                {
+                    "id": "4.1",
+                    "number": "4.1",
+                    "sanskrit": "श्रीभगवानुवाच। इमं विवस्वते योगं प्रोक्तवानहमव्ययम्। विवस्वान्मनवे प्राह मनुरिक्ष्वाकवेऽब्रवीत्।।",
+                    "transliteration": "sri-bhagavan uvaca / imam vivasvate yogam proktavan aham avyayam / vivasvan manave praha manur iksvakave 'bravit //",
+                    "translation": "The Blessed Lord said: I instructed this imperishable science of yoga to the sun-god, Vivasvan, and Vivasvan instructed it to Manu, the father of mankind, and Manu in turn instructed it to Ikshvaku.",
+                    "commentary": "Krishna reveals the ancient origins of the teachings of the Gita. This knowledge was first given to Vivasvan (the sun god), then passed down through a succession of enlightened kings and sages. This establishes the divine and timeless nature of the knowledge being imparted."
+                }
+            ]
+        }
+    ]
+}
