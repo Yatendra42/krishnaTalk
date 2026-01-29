@@ -1,0 +1,54 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.about-page {
+  min-height: 100vh;
+  background: white;
+}
+
+.about-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-3xl $spacing-lg;
+}
+
+.about-title {
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-lg;
+  color: $color-foreground;
+}
+
+.about-content {
+  font-size: $font-size-md;
+  line-height: $line-height-relaxed;
+  color: #0a0a0a;
+}
+
+.about-section {
+  margin-bottom: $spacing-2xl;
+
+  &__title {
+    font-size: 24px;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+    color: $color-foreground;
+  }
+
+  &__paragraph {
+    margin-bottom: $spacing-md;
+  }
+}
+
+.about-list {
+  padding-left: $spacing-lg;
+  margin-bottom: $spacing-md;
+
+  &__item {
+    margin-bottom: $spacing-xs;
+
+    strong {
+      font-weight: $font-weight-bold;
+    }
+  }
+}

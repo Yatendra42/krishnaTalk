@@ -1,71 +1,71 @@
-@import '../base/variables';
-@import '../base/mixins';
+@import "../base/variables";
+@import "../base/mixins";
 
 .footer {
-  background: $color-secondary;
-  border-top: 1px solid $color-border;
+  background: #1a2332;
+  border-top: 1px solid rgba(153, 161, 175, 0.2);
   margin-top: $spacing-3xl;
-  
+
   &__container {
     @include container;
     padding-top: $spacing-xl;
     padding-bottom: $spacing-xl;
   }
-  
+
   &__content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: $spacing-xl;
     margin-bottom: $spacing-lg;
-    
+
     @include mobile {
       grid-template-columns: 1fr;
       gap: $spacing-lg;
     }
   }
-  
+
   &__section {
     &-title {
       font-size: $font-size-md;
       font-weight: $font-weight-semibold;
-      color: $color-foreground;
+      color: #99a1af;
       margin-bottom: $spacing-sm;
     }
-    
+
     &-text {
       font-size: $font-size-sm;
-      color: $color-muted;
+      color: #99a1af;
       line-height: $line-height-relaxed;
     }
   }
-  
+
   &__links {
     display: flex;
     flex-direction: column;
     gap: $spacing-xs;
   }
-  
+
   &__link {
     font-size: $font-size-sm;
-    color: $color-muted;
+    color: #99a1af;
     text-decoration: none;
     @include smooth-transition(color);
-    
+
     &:hover {
-      color: $color-primary;
+      color: #ffffff;
     }
-    
+
     @include focus-visible;
   }
-  
+
   &__bottom {
     padding-top: $spacing-lg;
-    border-top: 1px solid $color-border;
+    border-top: 1px solid rgba(153, 161, 175, 0.2);
     text-align: center;
-    
+
     &-text {
       font-size: $font-size-xs;
-      color: $color-muted;
+      color: #99a1af;
     }
   }
 }

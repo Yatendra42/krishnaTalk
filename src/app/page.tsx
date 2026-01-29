@@ -1,9 +1,22 @@
-import { redirect } from 'next/navigation';
+import type { Metadata } from 'next';
+import { Header } from '@/app/components/Header';
+import { Footer } from '@/app/components/Footer';
+import { LandingClient } from '@/app/components/LandingClient';
+import { dataService } from '@/services/dataService';
 
-/**
- * Home page - redirects to first chapter
- * In the future, this could be a landing page with overview
- */
-export default function HomePage() {
-  redirect('/chapter/1');
+export const metadata: Metadata = {
+  title: 'Bhagavad Gita | Discover Eternal Wisdom',
+  description: 'Read all 18 chapters with Sanskrit verses, audio, and commentary.',
+};
+
+export default async function HomePage() {
+  const chapters = await dataService.getChapters();
+
+  return (
+    <>
+      <Header />
+      <LandingClient chapters={chapters} />
+      <Footer />
+    </>
+  );
 }

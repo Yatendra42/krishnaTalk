@@ -1,48 +1,58 @@
-@import '../base/variables';
-@import '../base/mixins';
+@import "../base/variables";
+@import "../base/mixins";
 
 .sidebar {
   width: 280px;
   flex-shrink: 0;
-  
+  position: sticky;
+  top: 150px;
+  max-height: calc(100vh - 330px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+
   @include mobile {
     display: none;
   }
-  
+
   @include tablet {
     width: 240px;
   }
-  
+
   &__sticky {
-    position: sticky;
-    top: 72px;
-    max-height: calc(100vh - 96px);
-    overflow-y: auto;
+    max-height: 500px;
+    max-width: 300px;
+    overflow: auto;
+    padding: $spacing-lg;
+    border-radius: $radius-lg;
+    border: 1px solid $color-border;
+    height: 400px;
   }
-  
+
   &__title {
     font-size: $font-size-md;
     font-weight: $font-weight-semibold;
     color: $color-foreground;
     margin-bottom: $spacing-md;
   }
-  
+
   &__list {
     display: flex;
     flex-direction: column;
     gap: $spacing-xs;
   }
-  
+
   &__item {
     @include smooth-transition(all);
     border-radius: $radius-md;
     overflow: hidden;
-    
+
     &:hover {
       transform: translateX(4px);
     }
   }
-  
+
   &__link {
     display: flex;
     align-items: center;
@@ -51,44 +61,45 @@
     text-decoration: none;
     border-radius: $radius-md;
     @include smooth-transition(all);
-    
+
     &:hover {
       background: $color-secondary;
     }
-    
+
     @include focus-visible;
-    
+
     &--active {
       background: $color-primary-light;
       border-left: 3px solid $color-primary;
     }
   }
-  
+
   &__image {
     width: 48px;
     height: 48px;
     border-radius: $radius-sm;
     object-fit: cover;
+    object-position: right top;
     flex-shrink: 0;
   }
-  
+
   &__info {
     flex: 1;
     min-width: 0;
   }
-  
+
   &__number {
     font-size: $font-size-xs;
     color: $color-muted;
     font-weight: $font-weight-medium;
   }
-  
+
   &__name {
     font-size: $font-size-sm;
     color: $color-foreground;
     font-weight: $font-weight-medium;
     @include truncate;
-    
+
     .sidebar__link--active & {
       color: $color-primary;
     }

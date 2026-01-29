@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { dataService } from '@/services/dataService';
 import { Header } from '@/app/components/Header';
 import { Footer } from '@/app/components/Footer';
-import styles from './explore.module.scss';
 
 export const metadata: Metadata = {
   title: 'Explore All Chapters | Bhagavad Gita',
@@ -13,49 +12,49 @@ export const metadata: Metadata = {
 
 export default async function ExplorePage() {
   const chapters = await dataService.getChapters();
-  
+
   return (
-    <div style={{ minHeight: '100vh', background: '#ffffff' }}>
+    <div className="explore-page">
       <Header />
-      
-      <main id="main-content" style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px' }}>
-        <div style={{ marginBottom: '48px' }}>
-          <h1 style={{ fontSize: '32px', fontWeight: 700, marginBottom: '12px' }}>
+
+      <main id="main-content" className="explore-main">
+        <div className="explore-header">
+          <h1 className="explore-title">
             Explore All Chapters
           </h1>
-          <p style={{ fontSize: '16px', color: '#737373', lineHeight: 1.75 }}>
+          <p className="explore-description">
             The Bhagavad Gita consists of 18 chapters, each exploring different aspects of life, duty, and spirituality.
           </p>
         </div>
-        
-        <div className={styles.grid}>
+
+        <div className="explore-grid">
           {chapters.map((chapter) => (
             <Link
               key={chapter.number}
               href={`/chapter/${chapter.number}`}
-              className={styles.card}
+              className="explore-card"
             >
-              <div className={styles.card__image}>
+              <div className="explore-card__image">
                 <Image
-                  src={chapter.imageUrl}
+                  src={`/assets/images/chapter_bg_${chapter.number}.jpg?v=${Date.now()}`}
                   alt={`Chapter ${chapter.number} illustration`}
                   fill
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  style={{ objectFit: 'cover' }}
                 />
               </div>
-              
-              <div className={styles.card__content}>
-                <div className={styles.card__badge}>
+
+              <div className="explore-card__content">
+                <div className="explore-card__badge">
                   Chapter {chapter.number}
                 </div>
-                <h2 className={styles.card__title}>
+                <h2 className="explore-card__title">
                   {chapter.title}
                 </h2>
-                <p className={styles.card__subtitle}>
+                <p className="explore-card__subtitle">
                   {chapter.subtitle}
                 </p>
-                <div className={styles.card__meta}>
+                <div className="explore-card__meta">
                   {chapter.verseCount} verses
                 </div>
               </div>
@@ -63,7 +62,7 @@ export default async function ExplorePage() {
           ))}
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );

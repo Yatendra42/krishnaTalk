@@ -1,0 +1,104 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.explore-page {
+  min-height: 100vh;
+  background: $color-background;
+}
+
+.explore-main {
+  @include container;
+  max-width: 1200px;
+  padding-top: $spacing-3xl;
+  padding-bottom: $spacing-3xl;
+  margin: 0 auto;
+}
+
+.explore-header {
+  margin-bottom: $spacing-3xl;
+}
+
+.explore-title {
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-md;
+  color: $color-foreground;
+}
+
+.explore-description {
+  font-size: $font-size-md;
+  color: $color-muted-foreground;
+  line-height: $line-height-relaxed;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: $spacing-lg;
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.explore-card {
+  @include card;
+  padding: 0;
+  overflow: hidden;
+  text-decoration: none;
+  @include smooth-transition(all);
+  @include hover-lift;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+
+  @include focus-visible;
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: $color-secondary;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: $spacing-lg;
+  }
+
+  &__badge {
+    display: inline-block;
+    background: $color-primary-light;
+    color: $color-primary;
+    padding: 4px 12px;
+    border-radius: $radius-sm;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-foreground;
+    margin-bottom: $spacing-xs;
+    line-height: $line-height-tight;
+  }
+
+  &__subtitle {
+    font-size: $font-size-sm;
+    color: $color-muted;
+    line-height: $line-height-normal;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__meta {
+    font-size: $font-size-xs;
+    color: $color-muted-foreground;
+    font-weight: $font-weight-medium;
+  }
+}

@@ -1,0 +1,485 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+// Hero - LEFT aligned with bg image
+.landing-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(
+    to right,
+    rgba(249, 115, 22, 0.9) 40%,
+    rgba(249, 115, 22, 0.4) 100%
+  );
+
+  &__video {
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: $spacing-3xl $spacing-md;
+    width: 100%;
+  }
+
+  &__sound-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-primary;
+    @include smooth-transition(all);
+    box-shadow: $shadow-lg;
+
+    &:hover {
+      transform: scale(1.1);
+      background: white;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include tablet-up {
+      bottom: 32px;
+      right: 32px;
+    }
+  }
+
+  &__content {
+    max-width: 600px;
+    color: white;
+
+    h1 {
+      font-size: 44px;
+      font-weight: $font-weight-bold;
+      line-height: 1.2;
+      margin: 0 0 $spacing-lg 0;
+
+      @include desktop-up {
+        font-size: 52px;
+      }
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0 0 $spacing-xl 0;
+      opacity: 0.95;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+  }
+}
+
+// Buttons
+.btn {
+  padding: 13px 28px;
+  border-radius: $radius-lg;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  display: inline-block;
+  @include smooth-transition(all);
+  font-size: 15px;
+
+  &--white {
+    background: white;
+    color: $color-primary;
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+    }
+  }
+  &--outline {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+  &--secondary {
+    background: $color-primary;
+    color: white;
+    &:hover {
+      background: $color-primary-dark;
+    }
+  }
+  &--outline-white {
+    border: 2px solid white;
+    color: white;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// Companion
+.landing-companion {
+  padding: $spacing-3xl $spacing-md;
+  text-align: center;
+
+  h2 {
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+    margin: 0 0 $spacing-sm 0;
+  }
+  &__sub {
+    color: $color-muted;
+    margin: 0 0 $spacing-2xl 0;
+    font-size: 16px;
+  }
+
+  &__grid {
+    display: flex;
+    gap: $spacing-lg;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  &__large {
+    position: relative;
+    color: white;
+    padding: $spacing-2xl;
+    border-radius: $radius-lg;
+    text-align: left;
+    margin: 0 auto;
+    gap: 30px;
+    flex: 1 0 50%;
+
+    span {
+      font-size: 48px;
+      display: block;
+      margin-bottom: $spacing-md;
+    }
+    h3 {
+      font-size: 24px;
+      margin: 0 0 $spacing-md 0;
+    }
+    p {
+      opacity: 0.95;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+  }
+
+  &__small {
+    border-radius: $radius-lg;
+    text-align: center;
+    img {
+      border-radius: 16px;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    gap: $spacing-sm;
+    margin-top: $spacing-lg;
+
+    span {
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: $radius-md;
+      font-size: 13px;
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+// Stats with icons
+.landing-stats {
+  background: white;
+  padding: $spacing-2xl $spacing-md;
+  display: grid;
+  gap: $spacing-xl;
+  text-align: center;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include desktop-up {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
+
+  &__icon {
+    font-size: 44px;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__num {
+    font-size: 42px;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: $color-muted;
+    font-weight: $font-weight-medium;
+  }
+}
+
+// Journey - new card design
+.landing-journey {
+  padding: $spacing-3xl $spacing-md;
+  text-align: center;
+  background: #fafafa;
+
+  h2 {
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+    margin: 0 0 $spacing-sm 0;
+  }
+  > p {
+    color: $color-muted;
+    margin: 0 0 $spacing-3xl 0;
+  }
+
+  &__items {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2xl;
+
+    @include desktop-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    @include smooth-transition(all);
+    display: flex;
+
+    &:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      transform: translateY(-4px);
+    }
+    &:nth-child(2) {
+      transform: translateX(30%);
+    }
+  }
+
+  &__card-image {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex: 0 0 300px;
+    img {
+    }
+  }
+
+  &__verse-badge {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: white;
+    color: $color-foreground;
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &__card-content {
+    padding: $spacing-xl;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    flex: 1;
+  }
+
+  &__category {
+    color: #ff6b35;
+    font-size: 13px;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    color: $color-foreground;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  &__description {
+    color: $color-muted;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 $spacing-md 0;
+  }
+
+  &__start-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    color: #ff6b35;
+    font-weight: $font-weight-semibold;
+    font-size: 15px;
+    text-decoration: none;
+    @include smooth-transition(all);
+
+    svg {
+      @include smooth-transition(transform);
+    }
+
+    &:hover {
+      gap: $spacing-sm;
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+// All Chapters - bordered grid
+.landing-all {
+  padding: $spacing-3xl $spacing-md;
+  text-align: center;
+  background: $color-secondary;
+
+  h2 {
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+    margin: 0 0 $spacing-2xl 0;
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1px;
+    background: $color-border;
+    border: 1px solid $color-border;
+    max-width: $container-max-width;
+    margin: 0 auto $spacing-xl auto;
+
+    @include tablet-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include desktop-up {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__cell {
+    background: white;
+    padding: $spacing-lg;
+    text-decoration: none;
+    color: inherit;
+    @include smooth-transition(all);
+
+    &:hover {
+      background: $color-primary-lighter;
+      transform: scale(1.02);
+    }
+
+    h4 {
+      font-size: 14px;
+      margin: $spacing-xs 0 $spacing-xs 0;
+      color: $color-foreground;
+      font-weight: $font-weight-semibold;
+    }
+    p {
+      font-size: 12px;
+      color: $color-muted;
+      margin: 0;
+    }
+  }
+
+  &__num {
+    display: block;
+    font-size: 28px;
+    font-weight: $font-weight-bold;
+    color: $color-primary;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+// CTA
+.landing-cta {
+  background: linear-gradient(135deg, $color-primary, $color-primary-dark);
+  color: white;
+  padding: $spacing-3xl $spacing-md;
+  text-align: center;
+
+  h2 {
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+    margin: 0 0 $spacing-md 0;
+  }
+  p {
+    margin: 0 0 $spacing-xl 0;
+    opacity: 0.95;
+    font-size: 16px;
+  }
+
+  div {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Song
+.landing-song {
+  padding: $spacing-3xl $spacing-md;
+  text-align: center;
+
+  h2 {
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+    margin: 0 0 $spacing-md 0;
+  }
+  p {
+    color: $color-muted;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+}

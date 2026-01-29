@@ -1,0 +1,80 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.verse-navigator {
+  width: 280px;
+  flex-shrink: 0;
+
+  @include mobile {
+    display: none;
+  }
+
+  &__sticky {
+    position: sticky;
+    top: 100px;
+    background: white;
+    padding: $spacing-lg;
+    border-radius: $radius-lg;
+    border: 1px solid $color-border;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: $font-weight-semibold;
+    color: $color-foreground;
+    margin: 0;
+  }
+
+  &__counter {
+    font-size: 14px;
+    font-weight: $font-weight-medium;
+    color: $color-primary;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: $spacing-xs;
+  }
+
+  &__button {
+    aspect-ratio: 1;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    background: white;
+    color: $color-foreground;
+    font-size: 13px;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    @include smooth-transition(all);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: $color-secondary;
+      border-color: $color-primary-light;
+      transform: translateY(-2px);
+      box-shadow: $shadow-sm;
+    }
+
+    &--active {
+      background: $color-primary;
+      color: white;
+      border-color: $color-primary;
+      font-weight: $font-weight-bold;
+
+      &:hover {
+        background: $color-primary-dark;
+        border-color: $color-primary-dark;
+      }
+    }
+  }
+}

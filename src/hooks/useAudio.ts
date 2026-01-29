@@ -60,8 +60,21 @@ export function useAudio(audioUrl: string, options: UseAudioOptions = {}): UseAu
         const audio = audioRef.current;
         if (!audio) return;
 
+        // Reset state for new URL
+        setError(null);
+        setIsLoading(!!audioUrl);
+
+        if (!audioUrl) {
+            audio.pause();
+            audio.src = '';
+            audio.load();
+            setIsPlaying(false);
+            return;
+        }
+
         audio.volume = volume;
         audio.loop = loop;
+        audio.load(); // Ensure source change is recognized
 
         if (autoPlay) {
             audio.play().catch((err) => {
@@ -69,14 +82,17 @@ export function useAudio(audioUrl: string, options: UseAudioOptions = {}): UseAu
                 onError?.(err);
             });
         }
-    }, [autoPlay, loop, volume, onError]);
+    }, [audioUrl, autoPlay, loop, volume, onError]);
 
     // Event handlers
     useEffect(() => {
         const audio = audioRef.current;
         if (!audio) return;
 
-        const handleLoadStart = () => setIsLoading(true);
+        const handleLoadStart = () => {
+            setIsLoading(true);
+            setError(null);
+        };
         const handleCanPlay = () => setIsLoading(false);
         const handleTimeUpdate = () => setCurrentTime(audio.currentTime);
         const handleDurationChange = () => setDuration(audio.duration);

@@ -1,27 +1,30 @@
-@import '../base/variables';
-@import '../base/mixins';
+@import "../base/variables";
+@import "../base/mixins";
 
 .audio-player {
   background: $color-primary-light;
   border-top: 1px solid $color-primary-lighter;
   border-bottom: 1px solid $color-primary-lighter;
-  
+  position: sticky;
+  top: 56px;
+  z-index: 100;
+
   &__container {
     @include container;
     padding-top: 12px;
     padding-bottom: 12px;
   }
-  
+
   &__controls {
     display: flex;
     align-items: center;
     gap: $spacing-md;
-    
+
     @include mobile {
       gap: $spacing-sm;
     }
   }
-  
+
   &__play-button {
     @include button-reset;
     background: $color-primary;
@@ -34,33 +37,33 @@
     justify-content: center;
     flex-shrink: 0;
     @include smooth-transition(background);
-    
+
     &:hover {
       background: $color-primary-dark;
     }
-    
+
     @include focus-visible;
-    
+
     &:active {
       transform: scale(0.95);
     }
-    
+
     svg {
       width: 18px;
       height: 18px;
     }
   }
-  
+
   &__info {
     flex-shrink: 0;
-    
+
     &-title {
       font-size: $font-size-sm;
       font-weight: $font-weight-medium;
       color: $color-foreground;
       line-height: 1.2;
     }
-    
+
     &-label {
       font-size: $font-size-xs;
       color: $color-muted;
@@ -68,28 +71,28 @@
       margin-top: 2px;
     }
   }
-  
+
   &__progress {
     flex: 1;
     display: flex;
     align-items: center;
     gap: 12px;
-    
+
     @include mobile {
       gap: 8px;
     }
-    
+
     &-time {
       font-size: $font-size-xs;
       color: $color-muted;
       flex-shrink: 0;
       min-width: 40px;
-      
+
       &--end {
         text-align: right;
       }
     }
-    
+
     &-bar {
       position: relative;
       flex: 1;
@@ -97,11 +100,11 @@
       background: rgba($color-primary, 0.2);
       border-radius: $radius-full;
       cursor: pointer;
-      
+
       &:hover &-thumb {
         opacity: 1;
       }
-      
+
       &-input {
         position: absolute;
         inset: 0;
@@ -111,7 +114,7 @@
         cursor: pointer;
         z-index: 10;
       }
-      
+
       &-fill {
         position: absolute;
         left: 0;
@@ -122,7 +125,7 @@
         @include smooth-transition(width);
         pointer-events: none;
       }
-      
+
       &-thumb {
         position: absolute;
         top: 50%;
@@ -138,35 +141,35 @@
       }
     }
   }
-  
+
   &__volume {
     display: flex;
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
-    
+
     @include mobile {
       gap: 6px;
     }
-    
+
     &-button {
       @include button-reset;
       color: $color-primary;
       @include smooth-transition(color);
       padding: 4px;
-      
+
       &:hover {
         color: $color-primary-dark;
       }
-      
+
       @include focus-visible;
-      
+
       svg {
         width: 18px;
         height: 18px;
       }
     }
-    
+
     &-bar {
       position: relative;
       width: 80px;
@@ -174,15 +177,15 @@
       background: rgba($color-primary, 0.2);
       border-radius: $radius-full;
       cursor: pointer;
-      
+
       @include mobile {
         width: 60px;
       }
-      
+
       &:hover &-thumb {
         opacity: 1;
       }
-      
+
       &-input {
         position: absolute;
         inset: 0;
@@ -192,7 +195,7 @@
         cursor: pointer;
         z-index: 10;
       }
-      
+
       &-fill {
         position: absolute;
         left: 0;
@@ -203,7 +206,7 @@
         @include smooth-transition(width);
         pointer-events: none;
       }
-      
+
       &-thumb {
         position: absolute;
         top: 50%;
@@ -219,11 +222,30 @@
       }
     }
   }
-  
+
   &__error {
     @include flex-center;
     padding: $spacing-md 0;
     color: #dc2626;
     font-size: $font-size-sm;
+  }
+
+  &__play-icon {
+    margin-left: 2px;
+  }
+
+  &__spinner {
+    animation: spin 1s linear infinite;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

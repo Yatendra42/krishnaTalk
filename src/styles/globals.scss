@@ -1,6 +1,6 @@
-@import './base/reset';
-@import './base/variables';
-@import './base/mixins';
+@import "./base/reset";
+@import "./base/variables";
+@import "./base/mixins";
 
 /* Global Styles */
 
@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: $font-size-2xl;
-  
+
   @include desktop-up {
     font-size: 32px;
   }
@@ -34,7 +34,7 @@ h1 {
 
 h2 {
   font-size: $font-size-xl;
-  
+
   @include desktop-up {
     font-size: 24px;
   }
@@ -50,82 +50,71 @@ h3 {
   @include container;
 }
 
-.visually-hidden {
-  @include visually-hidden;
-}
-
-/* Skip to content link for accessibility */
-.skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: $color-primary;
-  color: white;
-  padding: $spacing-sm $spacing-md;
-  text-decoration: none;
-  border-radius: $radius-md;
-  z-index: $z-tooltip;
-  
-  &:focus {
-    top: $spacing-sm;
-  }
-}
-
-/* Layout Utilities */
 .page-wrapper {
   min-height: 100vh;
-  background: $color-background;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content {
-  @include container;
-  padding-top: $spacing-2xl;
-  padding-bottom: $spacing-2xl;
+  flex: 1;
+  padding: $spacing-2xl 0;
+
+  @include mobile {
+    padding: $spacing-lg 0;
+  }
 }
 
 .content-layout {
-  display: flex;
-  gap: $spacing-2xl;
-  
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+
+  @include tablet {
+    grid-template-columns: 1fr 240px;
+    gap: 24px;
+  }
+
   @include mobile {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
 
 .content-primary {
-  flex: 1;
+  min-width: 0;
 }
 
 .verse-list {
   display: flex;
   flex-direction: column;
-  gap: $spacing-3xl;
+  gap: $spacing-xl;
 }
 
 .load-more {
   text-align: center;
   padding: $spacing-2xl 0;
-  
+
   &__text {
     color: $color-muted;
-    font-size: $font-size-sm;
     margin-bottom: $spacing-md;
   }
-  
+
   &__button {
     @include button-reset;
-    padding: 8px 24px;
     background: $color-primary;
     color: white;
+    padding: 12px 24px;
     border-radius: $radius-md;
-    font-size: $font-size-sm;
     font-weight: $font-weight-medium;
-    cursor: pointer;
     @include smooth-transition(background);
-    
+
     &:hover {
       background: $color-primary-dark;
     }
+
+    @include focus-visible;
   }
 }
 
@@ -141,10 +130,23 @@ h3 {
   }
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Component Styles */
-@import './components/header';
-@import './components/hero';
-@import './components/footer';
-@import './components/audio-player';
-@import './components/verse-card';
-@import './components/sidebar';
+@import "./components/header";
+@import "./components/hero";
+@import "./components/footer";
+@import "./components/audio-player";
+@import "./components/verse-card";
+@import "./components/sidebar";
+@import "./components/verse-navigator";
+@import "./components/landing";
+@import "./components/explore";
+@import "./components/about";

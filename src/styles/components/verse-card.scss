@@ -1,17 +1,17 @@
-@import '../base/variables';
-@import '../base/mixins';
+@import "../base/variables";
+@import "../base/mixins";
 
 .verse-card {
   @include card;
   scroll-margin-top: 24px;
-  
+
   &__header {
     @include flex-between;
     margin-bottom: $spacing-lg;
     flex-wrap: wrap;
     gap: $spacing-sm;
   }
-  
+
   &__badge {
     background: $color-primary;
     color: white;
@@ -20,61 +20,189 @@
     font-size: $font-size-sm;
     font-weight: $font-weight-semibold;
   }
-  
+
   &__meta {
     font-size: $font-size-xs;
     color: $color-muted;
   }
-  
-  &__sanskrit {
+
+  &__section {
+    display: flex;
+    gap: $spacing-md;
+    padding: $spacing-lg;
+    margin-bottom: $spacing-lg;
+    border-radius: $radius-md;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    position: relative;
+
+    &--playing {
+      border-color: $color-primary;
+      background: rgba($color-primary, 0.05);
+    }
+  }
+
+  &__play-btn {
+    @include button-reset;
+    background: $color-primary;
+    color: white;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include smooth-transition(all);
+    flex-shrink: 0;
+
+    &:hover {
+      background: $color-primary-dark;
+      transform: scale(1.05);
+    }
+  }
+
+  &__section-content {
+    flex: 1;
+  }
+
+  &__playing-label {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: $color-primary;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+  }
+
+  &__sanskrit-text {
     font-size: $font-size-xl;
     line-height: $line-height-relaxed;
-    color: $color-foreground;
-    margin-bottom: $spacing-lg;
     font-weight: $font-weight-medium;
-    text-align: center;
-    padding: $spacing-md 0;
-    
-    @include mobile {
-      font-size: $font-size-lg;
-    }
+    text-align: left;
   }
-  
-  &__transliteration {
+
+  &__transliteration-text {
     font-size: $font-size-md;
-    line-height: $line-height-relaxed;
-    color: $color-muted;
     font-style: italic;
-    margin-bottom: $spacing-lg;
-    padding: $spacing-md;
-    background: $color-secondary;
+    color: $color-muted;
+    padding: $spacing-lg;
+    background: $color-muted-background;
     border-radius: $radius-md;
-    border-left: 3px solid $color-primary;
   }
-  
-  &__translation {
-    font-size: $font-size-base;
-    line-height: $line-height-relaxed;
+
+  &__translation-text {
+    font-size: $font-size-xs;
+    color: $color-muted;
+    text-transform: uppercase;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__commentary-container {
+    margin-top: 0;
+    margin-bottom: $spacing-xl;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__commentary-label {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
     color: $color-foreground;
-    margin-bottom: $spacing-lg;
+  }
+
+  &__commentary-box {
+    display: flex;
+    gap: $spacing-lg;
+    padding: $spacing-lg;
+    background: $color-muted-background;
+    border: 1px solid transparent;
+    border-radius: $radius-lg;
+    position: relative;
+    @include smooth-transition(all);
+
+    &--playing {
+      box-shadow: 0 8px 30px rgba($color-primary, 0.1);
+      border-width: 2px;
+    }
+
+    &--expanded {
+      background: $color-primary-light;
+      border: 1px solid $color-primary;
+    }
+  }
+
+  &__commentary-play-btn {
+    @include button-reset;
+    background: $color-primary;
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba($color-primary, 0.3);
+    flex-shrink: 0;
+    @include smooth-transition(all);
+
+    &:hover {
+      transform: scale(1.05);
+      background: $color-primary-dark;
+    }
+  }
+
+  &__commentary-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__commentary-text {
+    font-size: $font-size-base;
+    line-height: 2;
+    color: $color-foreground;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    @include smooth-transition(all);
+
+    &--expanded {
+      -webkit-line-clamp: unset;
+      line-clamp: unset;
+    }
+  }
+
+  &__commentary-toggle {
+    @include button-reset;
+    color: $color-primary;
+    font-size: $font-size-sm;
     font-weight: $font-weight-medium;
-  }
-  
-  &__commentary {
-    &-title {
-      font-size: $font-size-md;
-      font-weight: $font-weight-semibold;
-      color: $color-foreground;
-      margin-bottom: $spacing-sm;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    width: fit-content;
+    @include smooth-transition(all);
+
+    svg {
+      transition: transform 0.3s ease;
     }
-    
-    &-text {
-      font-size: $font-size-md;
-      line-height: $line-height-relaxed;
-      color: $color-muted;
+
+    &--expanded svg {
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      color: $color-primary-dark;
+      text-decoration: underline;
     }
   }
-  
+
   &__actions {
     margin-top: $spacing-lg;
     padding-top: $spacing-lg;
@@ -83,7 +211,7 @@
     gap: $spacing-sm;
     flex-wrap: wrap;
   }
-  
+
   &__button {
     @include button-reset;
     padding: 8px 16px;
@@ -91,25 +219,23 @@
     font-weight: $font-weight-medium;
     border-radius: $radius-md;
     @include smooth-transition(all);
-    
+
     &--primary {
       background: $color-primary;
       color: white;
-      
+
       &:hover {
         background: $color-primary-dark;
       }
     }
-    
+
     &--secondary {
       background: $color-secondary;
       color: $color-foreground;
-      
+
       &:hover {
         background: darken($color-secondary, 5%);
       }
     }
-    
-    @include focus-visible;
   }
 }
