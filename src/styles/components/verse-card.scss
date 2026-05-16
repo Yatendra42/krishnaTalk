@@ -56,6 +56,12 @@
     @include smooth-transition(all);
     flex-shrink: 0;
 
+    svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
     &:hover {
       background: $color-primary-dark;
       transform: scale(1.05);
@@ -147,6 +153,12 @@
     box-shadow: 0 4px 12px rgba($color-primary, 0.3);
     flex-shrink: 0;
     @include smooth-transition(all);
+
+    svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+    }
 
     &:hover {
       transform: scale(1.05);

@@ -56,7 +56,7 @@ class DataService {
         this.dataPromise = import('fs/promises')
             .then(async (fs) => {
                 const path = await import('path');
-                const filePath = path.join(process.cwd(), 'public', 'data', 'en_gita.json');
+                const filePath = path.join(process.cwd(), 'public', 'data', 'hi_gita.json');
                 const fileContents = await fs.readFile(filePath, 'utf8');
                 return JSON.parse(fileContents);
             })

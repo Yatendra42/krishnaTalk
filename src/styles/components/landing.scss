@@ -177,11 +177,6 @@
     gap: 30px;
     flex: 1 0 50%;
 
-    span {
-      font-size: 48px;
-      display: block;
-      margin-bottom: $spacing-md;
-    }
     h3 {
       font-size: 24px;
       margin: 0 0 $spacing-md 0;
@@ -190,6 +185,24 @@
       opacity: 0.95;
       line-height: 1.6;
       font-size: 15px;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: $spacing-lg;
+    color: white;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 1.75;
     }
   }
 
@@ -234,8 +247,21 @@
   }
 
   &__icon {
-    font-size: 44px;
-    margin-bottom: $spacing-sm;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba($color-primary, 0.08);
+    margin: 0 auto $spacing-md auto;
+    color: $color-primary;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 1.75;
+    }
   }
 
   &__num {

@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { VideoPlayer } from '@/app/components/VideoPlayer';
+import { Volume2, VolumeX, BookOpen, Library, ScrollText, Headphones, Users, ChevronRight } from 'lucide-react';
 import '@/styles/components/landing.scss';
 
 interface LandingClientProps {
@@ -54,13 +55,9 @@ export function LandingClient({ chapters }: LandingClientProps) {
                                 aria-label={isMuted ? 'Turn sound on' : 'Turn sound off'}
                             >
                                 {isMuted ? (
-                                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                        <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" />
-                                    </svg>
+                                    <VolumeX width={24} height={24} />
                                 ) : (
-                                    <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
-                                    </svg>
+                                    <Volume2 width={24} height={24} />
                                 )}
                             </button>
                         </div>
@@ -76,7 +73,7 @@ export function LandingClient({ chapters }: LandingClientProps) {
 
                 <div className="landing-companion__grid">
                     <div className="landing-companion__large">
-                        <span className="landing-companion__icon">📖</span>
+                        <BookOpen className="landing-companion__icon" />
                         <h3>Complete Sacred Text</h3>
                         <p>Access all 700 verses across 18 chapters with original Sanskrit, accurate transliteration, and clear English translations</p>
                         <div className="landing-companion__tags">
@@ -101,22 +98,22 @@ export function LandingClient({ chapters }: LandingClientProps) {
             {/* Stats with icons */}
             <section className="landing-stats">
                 <div className="landing-stats__item">
-                    <div className="landing-stats__icon">📚</div>
+                    <div className="landing-stats__icon"><Library /></div>
                     <div className="landing-stats__num">18</div>
                     <div className="landing-stats__label">Chapters</div>
                 </div>
                 <div className="landing-stats__item">
-                    <div className="landing-stats__icon">📜</div>
+                    <div className="landing-stats__icon"><ScrollText /></div>
                     <div className="landing-stats__num">700+</div>
                     <div className="landing-stats__label">Verses</div>
                 </div>
                 <div className="landing-stats__item">
-                    <div className="landing-stats__icon">🎧</div>
+                    <div className="landing-stats__icon"><Headphones /></div>
                     <div className="landing-stats__num">2+</div>
                     <div className="landing-stats__label">Hrs</div>
                 </div>
                 <div className="landing-stats__item">
-                    <div className="landing-stats__icon">👥</div>
+                    <div className="landing-stats__icon"><Users /></div>
                     <div className="landing-stats__num">5000+</div>
                     <div className="landing-stats__label">Readers</div>
                 </div>
@@ -139,9 +136,7 @@ export function LandingClient({ chapters }: LandingClientProps) {
                             <p className="landing-journey__description">{chapters[0].subtitle}</p>
                             <Link href="/chapter/1" className="landing-journey__start-btn">
                                 Start Reading
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
+                                <ChevronRight width={16} height={16} />
                             </Link>
                         </div>
                     </div>
@@ -154,9 +149,7 @@ export function LandingClient({ chapters }: LandingClientProps) {
                             <p className="landing-journey__description">{chapters[1].subtitle}</p>
                             <Link href="/chapter/2" className="landing-journey__start-btn">
                                 Start Reading
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
+                                <ChevronRight width={16} height={16} />
                             </Link>
                         </div>
                         <div className="landing-journey__card-image">
@@ -176,9 +169,7 @@ export function LandingClient({ chapters }: LandingClientProps) {
                             <p className="landing-journey__description">{chapters[2].subtitle}</p>
                             <Link href="/chapter/3" className="landing-journey__start-btn">
                                 Start Reading
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
+                                <ChevronRight width={16} height={16} />
                             </Link>
                         </div>
                     </div>

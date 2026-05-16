@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search } from 'lucide-react';
+import { Search, BookOpen } from 'lucide-react';
 
 export function Header() {
   const pathname = usePathname();
@@ -16,7 +16,7 @@ export function Header() {
     <header className="header">
       <div className="header__container">
         <Link href="/" className="header__logo">
-          <span className="header__logo-icon" aria-hidden="true">🕉️</span>
+          <BookOpen className="header__logo-icon" aria-hidden="true" />
           <span className="header__logo-text">
             Bhagavad Gita
           </span>

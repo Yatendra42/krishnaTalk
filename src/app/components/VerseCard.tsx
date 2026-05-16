@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Play, Pause, ChevronDown } from 'lucide-react';
-import { TalkIcon } from './icons/TalkIcon';
+import { Play, Pause, ChevronDown, MessageCircle } from 'lucide-react';
 import type { Verse } from '@/services/dataService';
 import { useAudio } from '@/contexts/AudioContext';
 
@@ -69,7 +68,7 @@ export function VerseCard({ verse, isFirst, totalVerses }: VerseCardProps) {
         <h3 className="verse-card__commentary-label">Commentary</h3>
         <div className={`verse-card__commentary-box ${isExpanded ? 'verse-card__commentary-box--expanded' : ''}`}>
           <div className="verse-card__commentary-play-btn">
-            <TalkIcon size={24} />
+            <MessageCircle size={24} />
           </div>
 
           <div className="verse-card__commentary-content">
