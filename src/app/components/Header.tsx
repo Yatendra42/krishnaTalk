@@ -29,7 +29,7 @@ export function Header() {
     <header className="header">
       <div className="header__container">
         <Link href="/" className="header__logo">
-          <Image src={Logo} alt="GitaTalks" width={210} height={40} priority />
+          <Image src={Logo} alt="GitaTalks" width={147} height={28} priority />
         </Link>
 
         {/* Desktop Nav */}
@@ -94,7 +94,7 @@ export function Header() {
       <div className={`header__mobile-drawer ${isMobileMenuOpen ? 'header__mobile-drawer--open' : ''}`}>
         <div className="header__mobile-header">
           <Link href="/" className="header__logo" onClick={closeMobileMenu}>
-            <Image src={Logo} alt="GitaTalks" width={180} height={34} />
+            <Image src={Logo} alt="GitaTalks" width={126} height={24} />
           </Link>
           <button 
             className="header__close" 

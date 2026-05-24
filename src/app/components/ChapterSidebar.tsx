@@ -19,7 +19,7 @@ export async function ChapterSidebar({ currentChapter, chapters }: ChapterSideba
 
   return (
     <aside className="sidebar">
-      <div className="sidebar__sticky">
+      <div className="sidebar__sticky" data-lenis-prevent>
         <h2 className="sidebar__title">All Chapters</h2>
 
         <nav className="sidebar__list" aria-label="Chapter navigation">

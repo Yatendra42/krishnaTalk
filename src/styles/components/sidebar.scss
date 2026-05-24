@@ -4,10 +4,7 @@
 .sidebar {
   width: 280px;
   flex-shrink: 0;
-  position: sticky;
-  top: 150px;
-  max-height: calc(100vh - 122px);
-  height: 100%;
+  max-height: calc(100vh - 140px);
   display: flex;
   flex-direction: column;
   gap: $spacing-xl;
@@ -146,7 +143,10 @@
   // On desktop, it just wraps the sidebar directly with no drawer effect
   @include tablet-up {
     display: block; // acts normally
-    height: 100%;
+    position: sticky;
+    top: 140px;
+    align-self: start;
+    z-index: $z-sticky;
   }
 
   // On mobile, it acts as a drawer
