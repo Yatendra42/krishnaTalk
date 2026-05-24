@@ -6,9 +6,7 @@
   scroll-margin-top: 24px;
 
   @include mobile {
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
+    box-shadow: 0px 0px 6px 4px #0000000d;
   }
 
   &__header {

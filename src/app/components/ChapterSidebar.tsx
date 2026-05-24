@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { ChapterSummary } from '@/services/dataService';
-import { VerseNavigator } from '@/app/components/VerseNavigator';
 import { dataService } from '@/services/dataService';
 
 
@@ -52,10 +51,6 @@ export async function ChapterSidebar({ currentChapter, chapters }: ChapterSideba
           ))}
         </nav>
       </div>
-      <VerseNavigator
-        totalVerses={chapter.verseCount}
-        chapterNumber={chapter.number}
-      />
     </aside>
   );
 }
