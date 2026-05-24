@@ -1,5 +1,5 @@
-@import '../base/variables';
-@import '../base/mixins';
+@import "../base/variables";
+@import "../base/mixins";
 
 .header {
   background: $color-background;
@@ -7,7 +7,7 @@
   position: sticky;
   top: 0;
   z-index: $z-header;
-  
+
   &__container {
     @include container;
     height: 56px;
@@ -15,52 +15,48 @@
     align-items: center;
     justify-content: space-between;
     gap: $spacing-lg;
-    
+
     @include mobile {
       height: 52px;
       gap: $spacing-md;
     }
   }
-  
+
   &__logo {
     display: flex;
     align-items: center;
     gap: $spacing-xs;
     text-decoration: none;
     @include smooth-transition(opacity);
-    
-    &:hover {
-      opacity: 0.8;
-    }
-    
+
     &-icon {
       width: 22px;
       height: 22px;
       color: $color-primary;
       flex-shrink: 0;
     }
-    
+
     &-text {
       font-weight: $font-weight-medium;
       font-size: $font-size-lg;
       color: $color-foreground;
-      
+
       @include mobile {
         font-size: $font-size-md;
       }
     }
   }
-  
+
   &__nav {
     display: flex;
     align-items: center;
     gap: $spacing-lg;
-    
+
     @include mobile {
       display: none;
     }
   }
-  
+
   &__link {
     font-size: $font-size-md;
     color: $color-muted;
@@ -68,19 +64,19 @@
     font-weight: $font-weight-normal;
     @include smooth-transition(color);
     position: relative;
-    
+
     &:hover {
       color: $color-primary;
     }
-    
+
     @include focus-visible;
-    
+
     &--active {
       color: $color-foreground;
       font-weight: $font-weight-medium;
-      
+
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -2px;
         left: 0;
@@ -90,24 +86,24 @@
       }
     }
   }
-  
+
   &__actions {
     display: flex;
     align-items: center;
     gap: $spacing-sm;
-    
+
     @include mobile {
       gap: $spacing-xs;
     }
   }
-  
+
   &__search {
     position: relative;
-    
+
     @include mobile {
       display: none;
     }
-    
+
     &-icon {
       position: absolute;
       left: 12px;
@@ -118,7 +114,7 @@
       width: 16px;
       height: 16px;
     }
-    
+
     &-input {
       padding: 6px 12px 6px 36px;
       font-size: $font-size-sm;
@@ -127,20 +123,20 @@
       border-radius: $radius-md;
       width: 192px;
       @include smooth-transition(all);
-      
+
       &:focus {
         outline: none;
         border-color: $color-primary;
         box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
         background: $color-background;
       }
-      
+
       &::placeholder {
         color: $color-muted-foreground;
       }
     }
   }
-  
+
   &__language {
     padding: 6px 12px;
     font-size: $font-size-sm;
@@ -150,16 +146,16 @@
     color: $color-foreground;
     cursor: pointer;
     @include smooth-transition(all);
-    
+
     @include mobile {
       padding: 6px 8px;
       font-size: 12px;
     }
-    
+
     &:hover {
       border-color: $color-primary;
     }
-    
+
     &:focus {
       outline: none;
       border-color: $color-primary;
@@ -172,13 +168,13 @@
     display: none;
     color: $color-foreground;
     padding: $spacing-xs;
-    
+
     @include mobile {
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    
+
     &:hover {
       color: $color-primary;
     }
@@ -198,7 +194,7 @@
       opacity: 1;
       visibility: visible;
     }
-    
+
     @include tablet-up {
       display: none;
     }
@@ -243,7 +239,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     &:hover {
       color: $color-primary;
     }
@@ -269,12 +265,12 @@
     border-radius: $radius-md;
     font-weight: $font-weight-medium;
     @include smooth-transition(all);
-    
+
     &:hover {
       background: $color-secondary;
       color: $color-primary;
     }
-    
+
     &--active {
       color: $color-primary;
       background: $color-primary-light;
