@@ -38,16 +38,16 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "GitaTalks – Whole Geeta Is Here",
+    title: "GitaTalks — Ancient Bhagavad Gita Wisdom for Modern Life",
     description:
-      "Discover the timeless wisdom of the Bhagavad Gita.",
+      "Explore the complete Bhagavad Gita with life-changing shlokas, Krishna’s teachings, spiritual guidance, inner peace, and powerful wisdom for everyday life.",
     url: "https://www.gitatalks.com",
     siteName: "GitaTalks",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/og-image.png",
+        width: 400,
+        height: 400,
         alt: "GitaTalks"
       }
     ],
@@ -57,10 +57,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "GitaTalks – Whole Geeta Is Here",
+    title: "GitaTalks — Ancient Bhagavad Gita Wisdom for Modern Life",
     description:
-      "Read and explore the complete Bhagavad Gita with modern spiritual insights.",
-    images: ["/og-image.jpg"]
+      "Explore the complete Bhagavad Gita with life-changing shlokas, Krishna’s teachings, spiritual guidance, inner peace, and powerful wisdom for everyday life.",
+    images: ["/og-image.png"]
   },
 
   robots: {
