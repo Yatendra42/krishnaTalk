@@ -36,6 +36,10 @@
     transition: all 0.3s;
     position: relative;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     &--playing {
       border-color: $color-primary;
       background: rgba($color-primary, 0.05);
@@ -128,6 +132,11 @@
     border-radius: $radius-lg;
     position: relative;
     @include smooth-transition(all);
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-md;
+    }
 
     &--playing {
       box-shadow: 0 8px 30px rgba($color-primary, 0.1);

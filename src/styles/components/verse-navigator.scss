@@ -6,7 +6,7 @@
   flex-shrink: 0;
 
   @include mobile {
-    display: none;
+    width: 100%;
   }
 
   &__sticky {
@@ -16,6 +16,14 @@
     padding: $spacing-lg;
     border-radius: $radius-lg;
     border: 1px solid $color-border;
+
+    @include mobile {
+      position: static;
+      top: auto;
+      padding: $spacing-md;
+      border: none;
+      border-radius: 0;
+    }
   }
 
   &__header {

@@ -10,6 +10,10 @@
   max-width: 800px;
   margin: 0 auto;
   padding: $spacing-3xl $spacing-lg;
+
+  @include mobile {
+    padding: $spacing-xl $spacing-md;
+  }
 }
 
 .about-title {

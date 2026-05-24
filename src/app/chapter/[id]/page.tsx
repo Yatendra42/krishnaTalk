@@ -7,6 +7,7 @@ import { Footer } from '@/app/components/Footer';
 import { HeroWithImage } from '@/app/components/HeroWithImage';
 import { VerseCard } from '@/app/components/VerseCard';
 import { ChapterSidebar } from '@/app/components/ChapterSidebar';
+import { SidebarWrapper } from '@/app/components/SidebarWrapper';
 import { VerseNavigator } from '@/app/components/VerseNavigator';
 import { AudioProvider } from '@/contexts/AudioContext';
 
@@ -87,10 +88,12 @@ export default async function ChapterPage({ params }: PageProps) {
               </div>
             </div>
 
-            <ChapterSidebar
-              currentChapter={chapter.number}
-              chapters={allChapters}
-            />
+            <SidebarWrapper>
+              <ChapterSidebar
+                currentChapter={chapter.number}
+                chapters={allChapters}
+              />
+            </SidebarWrapper>
 
 
           </div>

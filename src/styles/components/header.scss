@@ -166,4 +166,118 @@
       box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
     }
   }
+
+  &__hamburger {
+    @include button-reset;
+    display: none;
+    color: $color-foreground;
+    padding: $spacing-xs;
+    
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: $z-modal - 1;
+    opacity: 0;
+    visibility: hidden;
+    @include smooth-transition(all);
+    backdrop-filter: blur(2px);
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    @include tablet-up {
+      display: none;
+    }
+  }
+
+  &__mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    background: $color-background;
+    z-index: $z-modal;
+    box-shadow: $shadow-lg;
+    transform: translateX(-100%);
+    @include smooth-transition(transform, 300ms);
+    display: flex;
+    flex-direction: column;
+
+    &--open {
+      transform: translateX(0);
+    }
+
+    @include tablet-up {
+      display: none;
+    }
+  }
+
+  &__mobile-header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $spacing-md;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__close {
+    @include button-reset;
+    color: $color-muted;
+    padding: $spacing-xs;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__mobile-content {
+    padding: $spacing-lg $spacing-md;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  &__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__mobile-link {
+    font-size: $font-size-lg;
+    color: $color-foreground;
+    text-decoration: none;
+    padding: $spacing-sm;
+    border-radius: $radius-md;
+    font-weight: $font-weight-medium;
+    @include smooth-transition(all);
+    
+    &:hover {
+      background: $color-secondary;
+      color: $color-primary;
+    }
+    
+    &--active {
+      color: $color-primary;
+      background: $color-primary-light;
+    }
+  }
 }
