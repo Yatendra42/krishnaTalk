@@ -93,8 +93,11 @@ export default async function ChapterPage({ params }: PageProps) {
                 currentChapter={chapter.number}
                 chapters={allChapters}
               />
+              <VerseNavigator
+                totalVerses={chapter.verseCount}
+                chapterNumber={chapter.number}
+              />
             </SidebarWrapper>
-
 
           </div>
         </main>

@@ -44,8 +44,8 @@ export function LandingClient({ chapters }: LandingClientProps) {
                 />
                 <div className="landing-hero__container">
                     <div className="landing-hero__content">
-                        <h1>Discover the Eternal Wisdom of the Bhagavad Gita</h1>
-                        <p>Explore the divine conversation between Lord Krishna and Arjuna. Read verse-by-verse with Sanskrit, translation, and commentary.</p>
+                        <h1>Complete Bhagavad Gita Teachings & Spiritual Wisdom</h1>
+                        <p>Whole Geeta Is Here<br />Discover timeless Krishna wisdom, Bhagavad Gita shlokas, spiritual teachings, and life-changing insights in one modern platform.</p>
                         <div className="landing-hero__btns">
                             <Link href="/chapter/1" className="btn btn--white">Read Gita</Link>
                             <Link href="/explore" className="btn btn--outline">Explore</Link>

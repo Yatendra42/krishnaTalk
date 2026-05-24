@@ -5,6 +5,12 @@
   @include card;
   scroll-margin-top: 24px;
 
+  @include mobile {
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
   &__header {
     @include flex-between;
     margin-bottom: $spacing-lg;
@@ -90,6 +96,7 @@
     line-height: $line-height-relaxed;
     font-weight: $font-weight-medium;
     text-align: left;
+    white-space: pre-line;
   }
 
   &__transliteration-text {
@@ -99,6 +106,7 @@
     padding: $spacing-lg;
     background: $color-muted-background;
     border-radius: $radius-md;
+    white-space: pre-line;
   }
 
   &__translation-text {

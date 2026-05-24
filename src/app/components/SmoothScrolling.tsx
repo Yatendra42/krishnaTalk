@@ -16,7 +16,7 @@ export default function SmoothScrolling({ children }: SmoothScrollingProps) {
         lerp: 0.05,
         smoothWheel: true,
         wheelMultiplier: 1,
-        syncTouch: true,
+        syncTouch: false,
       }}
     >
       {children}

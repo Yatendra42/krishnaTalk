@@ -6,7 +6,7 @@
   border-top: 1px solid $color-primary-lighter;
   border-bottom: 1px solid $color-primary-lighter;
   position: sticky;
-  top: 56px;
+  top: 53px;
   z-index: 100;
 
   &__container {
@@ -147,6 +147,7 @@
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
+    flex: 1;
 
     @include mobile {
       gap: 6px;
