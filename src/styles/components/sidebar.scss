@@ -20,6 +20,14 @@
     width: 240px;
   }
 
+  @include tablet-landscape {
+    width: 240px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 4px; /* Space for scrollbar */
+  }
+
   &__sticky {
     max-height: 500px;
     max-width: 300px;
