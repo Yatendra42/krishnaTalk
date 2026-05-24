@@ -210,9 +210,7 @@ export function AudioPlayer({ verseNumber, label }: AudioPlayerProps) {
               />
             </div>
 
-            <span className="audio-player__progress-time audio-player__progress-time--end">
-              {formatTime(duration)}
-            </span>
+
           </div>
 
           <div className="audio-player__volume">

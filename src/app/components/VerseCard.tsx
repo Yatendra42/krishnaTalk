@@ -5,6 +5,8 @@ import { Play, Pause, ChevronDown, MessageCircle } from 'lucide-react';
 import type { Verse } from '@/services/dataService';
 import { useAudio } from '@/contexts/AudioContext';
 
+import { VerseActions } from './VerseActions';
+
 interface VerseCardProps {
   verse: Verse;
   isFirst?: boolean;
@@ -85,13 +87,7 @@ export function VerseCard({ verse, isFirst, totalVerses }: VerseCardProps) {
         </div>
       </div>
 
-      {isFirst && (
-        <div className="verse-card__actions">
-          <button className="verse-card__button verse-card__button--primary">Share Verse</button>
-          <button className="verse-card__button verse-card__button--secondary">Bookmark</button>
-          <button className="verse-card__button verse-card__button--secondary">Copy Text</button>
-        </div>
-      )}
+      <VerseActions verse={verse} />
     </div>
   );
 }

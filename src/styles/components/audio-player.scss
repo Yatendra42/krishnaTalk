@@ -22,6 +22,7 @@
 
     @include mobile {
       gap: $spacing-sm;
+      justify-content: space-between;
     }
   }
 
@@ -80,6 +81,7 @@
 
     @include mobile {
       gap: 8px;
+      margin-left: 15px;
     }
 
     &-time {
@@ -149,7 +151,7 @@
     flex-shrink: 0;
 
     @include mobile {
-      gap: 6px;
+      display: none;
     }
 
     &-button {

@@ -56,8 +56,8 @@ export function SidebarWrapper({ children }: { children: React.ReactNode }) {
           </button>
         </div>
         <div className="sidebar-wrapper__content" onClick={(e) => {
-          // If they click a link inside, close the drawer
-          if ((e.target as HTMLElement).closest('a')) {
+          // If they click a link or button inside, close the drawer
+          if ((e.target as HTMLElement).closest('a, button')) {
             setIsOpen(false);
           }
         }}>

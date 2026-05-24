@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "GitaTalks",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 400,
         height: 400,
         alt: "GitaTalks"

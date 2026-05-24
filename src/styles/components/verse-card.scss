@@ -266,5 +266,8 @@
         background: darken($color-secondary, 5%);
       }
     }
+    @include mobile {
+      font-size: 0;
+    }
   }
 }
