@@ -3,15 +3,18 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
+import i18nConfig from '../../../i18nConfig';
 import { Search, BookOpen, Menu, X } from 'lucide-react';
 import Logo from "../../../public/logo.png";
 
 export function Header() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { i18n } = useTranslation();
+  const currentLocale = i18n.language;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Close mobile menu when pathname changes
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
@@ -23,6 +26,24 @@ export function Header() {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = e.target.value;
+
+    const days = 30;
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    const expires = date.toUTCString();
+    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+
+    if (currentLocale === i18nConfig.defaultLocale && !pathname.startsWith(`/${currentLocale}`)) {
+      router.push('/' + newLocale + pathname);
+    } else {
+      router.push(pathname.replace(`/${currentLocale}`, `/${newLocale}`));
+    }
+    
+    router.refresh();
   };
 
   return (
@@ -68,11 +89,14 @@ export function Header() {
           <select
             className="header__language"
             aria-label="Select language"
-            defaultValue="english"
+            value={currentLocale}
+            onChange={handleLanguageChange}
           >
-            <option value="english">English</option>
-            <option value="hindi">Hindi</option>
-            <option value="sanskrit">Sanskrit</option>
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="es">Spanish</option>
+            <option value="ru">Russian</option>
+            <option value="bn">Bengali</option>
           </select>
 
           {/* Mobile Hamburger Button */}

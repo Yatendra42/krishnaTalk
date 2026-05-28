@@ -35,50 +35,51 @@ interface DataResponse {
 }
 
 class DataService {
-    private data: DataResponse | null = null;
-    private dataPromise: Promise<DataResponse> | null = null;
+    private data: Record<string, DataResponse> = {};
+    private dataPromises: Record<string, Promise<DataResponse>> = {};
 
 
     /**
      * Fetch all data (cached after first load)
      */
-    private async fetchData(): Promise<DataResponse> {
-        if (this.data) {
-            return this.data;
+    private async fetchData(locale: string = 'en'): Promise<DataResponse> {
+        if (this.data[locale]) {
+            return this.data[locale];
         }
 
         // Prevent multiple simultaneous fetches
-        if (this.dataPromise) {
-            return this.dataPromise;
+        if (this.dataPromises[locale]) {
+            return this.dataPromises[locale];
         }
 
         // Use dynamic import for fs to work in both server and client contexts
-        this.dataPromise = import('fs/promises')
+        this.dataPromises[locale] = import('fs/promises')
             .then(async (fs) => {
                 const path = await import('path');
-                const filePath = path.join(process.cwd(), 'public', 'data', 'hi_gita.json');
+                const fileName = locale === 'hi' ? 'hi_gita.json' : 'en_gita.json';
+                const filePath = path.join(process.cwd(), 'public', 'data', fileName);
                 const fileContents = await fs.readFile(filePath, 'utf8');
                 return JSON.parse(fileContents);
             })
             .then((data) => {
-                this.data = data;
-                this.dataPromise = null;
+                this.data[locale] = data;
+                delete this.dataPromises[locale];
                 return data;
             })
             .catch((error) => {
-                this.dataPromise = null;
+                delete this.dataPromises[locale];
                 throw error;
             });
 
-        return this.dataPromise;
+        return this.dataPromises[locale];
     }
 
     /**
      * Get all chapters
      * Future: Replace with API call to /api/chapters
      */
-    async getChapters(): Promise<Chapter[]> {
-        const data = await this.fetchData();
+    async getChapters(locale: string = 'en'): Promise<Chapter[]> {
+        const data = await this.fetchData(locale);
         return data.chapters;
     }
 
@@ -86,8 +87,8 @@ class DataService {
      * Get chapter summaries (for listings)
      * Future: Replace with API call to /api/chapters/summaries
      */
-    async getChapterSummaries(): Promise<ChapterSummary[]> {
-        const chapters = await this.getChapters();
+    async getChapterSummaries(locale: string = 'en'): Promise<ChapterSummary[]> {
+        const chapters = await this.getChapters(locale);
         return chapters.map((ch) => ({
             number: ch.number,
             title: ch.title,
@@ -99,8 +100,8 @@ class DataService {
      * Get a specific chapter by ID
      * Future: Replace with API call to /api/chapters/:id
      */
-    async getChapterById(id: number): Promise<Chapter | null> {
-        const chapters = await this.getChapters();
+    async getChapterById(id: number, locale: string = 'en'): Promise<Chapter | null> {
+        const chapters = await this.getChapters(locale);
         return chapters.find((ch) => ch.number === id) || null;
     }
 
@@ -108,8 +109,8 @@ class DataService {
      * Get a specific verse by chapter and verse ID
      * Future: Replace with API call to /api/chapters/:chapterId/verses/:verseId
      */
-    async getVerseById(chapterId: number, verseId: string): Promise<Verse | null> {
-        const chapter = await this.getChapterById(chapterId);
+    async getVerseById(chapterId: number, verseId: string, locale: string = 'en'): Promise<Verse | null> {
+        const chapter = await this.getChapterById(chapterId, locale);
         return chapter?.verses.find((v) => v.id === verseId) || null;
     }
 
@@ -117,8 +118,8 @@ class DataService {
      * Search verses by text (simple client-side search)
      * Future: Replace with API call to /api/search?q=...
      */
-    async searchVerses(query: string): Promise<Verse[]> {
-        const chapters = await this.getChapters();
+    async searchVerses(query: string, locale: string = 'en'): Promise<Verse[]> {
+        const chapters = await this.getChapters(locale);
         const allVerses = chapters.flatMap((ch) => ch.verses);
         const lowerQuery = query.toLowerCase();
 
@@ -135,8 +136,8 @@ class DataService {
      * Clear cache (useful for development/testing)
      */
     clearCache(): void {
-        this.data = null;
-        this.dataPromise = null;
+        this.data = {};
+        this.dataPromises = {};
     }
 }
 

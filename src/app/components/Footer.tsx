@@ -8,11 +8,11 @@ export function Footer() {
           <div className="footer__section">
             <h3 className="footer__section-title">About</h3>
             <p className="footer__section-text">
-              The Bhagavad Gita is a 700-verse Hindu scripture that is part of the epic Mahabharata, 
+              The Bhagavad Gita is a 700-verse Hindu scripture that is part of the epic Mahabharata,
               containing a conversation between Prince Arjuna and Lord Krishna.
             </p>
           </div>
-          
+
           <div className="footer__section">
             <h3 className="footer__section-title">Quick Links</h3>
             <nav className="footer__links">
@@ -21,7 +21,7 @@ export function Footer() {
               <Link href="/about" className="footer__link">About</Link>
             </nav>
           </div>
-          
+
           <div className="footer__section">
             <h3 className="footer__section-title">Resources</h3>
             <nav className="footer__links">
@@ -31,10 +31,13 @@ export function Footer() {
             </nav>
           </div>
         </div>
-        
+
         <div className="footer__bottom">
           <p className="footer__bottom-text">
-            © {new Date().getFullYear()} Bhagavad Gita. All rights reserved.
+            © {new Date().getFullYear()} GitaTalks. All rights reserved.
+          </p>
+          <p className="footer__bottom-text" style={{ marginTop: '8px' }}>
+            Website designed and developed by <strong><a href="https://yatendrajain.com" target="_blank" rel="noopener noreferrer">Yatendra Jain</a></strong>
           </p>
         </div>
       </div>

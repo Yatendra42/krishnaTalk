@@ -9,8 +9,9 @@ export const metadata: Metadata = {
   description: 'Read all 18 chapters with Sanskrit verses, audio, and commentary.',
 };
 
-export default async function HomePage() {
-  const chapters = await dataService.getChapters();
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const chapters = await dataService.getChapters(locale);
 
   return (
     <>

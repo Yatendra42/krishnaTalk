@@ -10,8 +10,9 @@ export const metadata: Metadata = {
   description: 'Browse all 18 chapters of the Bhagavad Gita with Sanskrit verses, translations, and commentary.',
 };
 
-export default async function ExplorePage() {
-  const chapters = await dataService.getChapters();
+export default async function ExplorePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const chapters = await dataService.getChapters(locale);
 
   return (
     <div className="explore-page">

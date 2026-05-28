@@ -8,8 +8,10 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
 };
-import '../styles/globals.scss';
+import '../../styles/globals.scss';
 import SmoothScrolling from '@/app/components/SmoothScrolling';
+import initTranslations from '@/i18n';
+import TranslationsProvider from '@/app/components/TranslationsProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -70,11 +72,15 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  const { resources } = await initTranslations(locale, ['translation']);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -90,7 +96,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang={locale} className={inter.variable}>
       <head>
         <Script
           id="gtm-script"
@@ -119,9 +125,11 @@ export default function RootLayout({
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
-        <SmoothScrolling>
-          {children}
-        </SmoothScrolling>
+        <TranslationsProvider locale={locale} resources={resources} namespaces={['translation']}>
+          <SmoothScrolling>
+            {children}
+          </SmoothScrolling>
+        </TranslationsProvider>
       </body>
     </html>
   );

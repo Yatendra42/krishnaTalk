@@ -12,13 +12,13 @@ import { VerseNavigator } from '@/app/components/VerseNavigator';
 import { AudioProvider } from '@/contexts/AudioContext';
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string; locale: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { id } = await params;
+  const { id, locale } = await params;
   const chapterId = parseInt(id, 10);
-  const chapter = await dataService.getChapterById(chapterId);
+  const chapter = await dataService.getChapterById(chapterId, locale);
 
   if (!chapter) {
     return {
@@ -33,15 +33,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function ChapterPage({ params }: PageProps) {
-  const { id } = await params;
+  const { id, locale } = await params;
   const chapterId = parseInt(id, 10);
-  const chapter = await dataService.getChapterById(chapterId);
+  const chapter = await dataService.getChapterById(chapterId, locale);
 
   if (!chapter) {
     notFound();
   }
 
-  const allChapters = await dataService.getChapterSummaries();
+  const allChapters = await dataService.getChapterSummaries(locale);
 
   return (
     <AudioProvider>
